@@ -36,6 +36,22 @@ namespace Practical_2
             }
 
             //Tells the day equivalent of 
+            DayTeller(daynumber);
+
+            //tells the user to enter a new number to add on the initial number
+            Console.Write("Enter another number to add to the day number: ");
+            int numtoadd = Convert.ToInt32(Console.ReadLine());
+
+            //uses mathematical equation to determine the day
+            int numandday = numtoadd + daynumber;
+            int asd = numandday % 7;
+
+            //tells the 2nd day equivalent
+            DayTeller2(asd);
+        }
+
+        public static void DayTeller(int daynumber)
+        {
             if (daynumber == 1)
             {
                 Console.WriteLine("The Day is Monday");
@@ -64,14 +80,10 @@ namespace Practical_2
             {
                 Console.WriteLine("The Day is Sunday");
             }
-            //tells the user to enter a new number to add on the initial number
-            Console.Write("Enter another number to add to the day number: ");
-            int numtoadd = Convert.ToInt32(Console.ReadLine());
+        }
 
-            //uses mathematical equation to determine the day
-            int numandday = numtoadd + daynumber;
-            int asd = numandday % 7;
-
+        public static void DayTeller2(int asd)
+        {
             if (asd == 1)
             {
                 Console.WriteLine("The New Day is Monday");
