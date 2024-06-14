@@ -40,113 +40,123 @@ namespace Practical_3
             int age = 2024 - birthyear;
 
             //compare the birthyear through different conditional statements to determine the generation
-            GenerationDeterminer(birthyear, age);
+            string Message = GenerationDeterminer(birthyear, age);
+
+            Console.WriteLine(Message);
         }
-        public static void GenerationDeterminer(int birthyear, int age)
+        public static string GenerationDeterminer(int birthyear, int age)
         {
+            string Message = "";
             if (birthyear < 1928)
             {
-                Console.WriteLine($"{age} year/s old, and Late Adulthood Ages. Unfortunately we don't have enough data to determine your generation");
+                Message = $"{age} year/s old, and Late Adulthood Ages. Unfortunately we don't have enough data to determine your generation";
             }
             else if (birthyear >= 1928 && birthyear <= 1945)
             {
-                AgeStagesDeterminerTheSilentGeneration(age);
+                Message = AgeStagesDeterminerTheSilentGeneration(age);
             }
             else if (birthyear >= 1946 && birthyear <= 1964)
             {
-                Console.WriteLine($"{age} year/s old, Baby Boomers, Mature Adulthood ages");
+                Message = $"{age} year/s old, Baby Boomers, Mature Adulthood ages";
             }
             else if (birthyear >= 1965 && birthyear <= 1980)
             {
-                AgeStagesDeterminerGenX(age);
+                Message = AgeStagesDeterminerGenX(age);
             }
             else if (birthyear >= 1981 && birthyear <= 1996)
             {
-                AgeStagesDeterminerMillenials(age);
+                Message = AgeStagesDeterminerMillenials(age);
             }
             else if (birthyear >= 1997 && birthyear <= 2012)
             {
-                AgeStagesDeterminerGenZ1(age);
+                Message = AgeStagesDeterminerGenZ1(age);
             }
             else if (birthyear >= 1997 && birthyear <= 2012)
             {
-                AgeStagesDeterminerGenZ2(age);
+                Message = AgeStagesDeterminerGenZ2(age);
 
             }
             else if (birthyear > 2024)
             {
-                Console.WriteLine("How are you here? you're not born yet :o");
+                Message = "How are you here? you're not born yet :o";
             }
-        }
-        public static void AgeStagesDeterminerTheSilentGeneration(int age)
-        {
-            Console.WriteLine($"{age} year/s old, The Silent Generation, ");
 
-            //compares age to a specific ages to determine the life stages
+            return Message;
+        }
+        public static string AgeStagesDeterminerTheSilentGeneration(int age)
+        {
+            string Message = $"{age} year/s old, The Silent Generation, ";
             if (age > 80)
             {
-                Console.Write("Late Adulthood ages");
+                Message = Message + "Late Adulthood ages";
             }
             else
             {
-                Console.Write("Mature Adulthood ages");
+                Message = Message + "Mature Adulthood ages";
             }
+            return Message;
         }
-        public static void AgeStagesDeterminerGenX(int age)
+        public static string AgeStagesDeterminerGenX(int age)
         {
-            Console.WriteLine($"{age} year/s old, Gen X, ");
+            string Message = $"{age} year/s old, Gen X, ";
             if (age > 50)
             {
-                Console.Write("Mature Adulthood ages");
+                Message = Message + "Mature Adulthood ages";
             }
             else
             {
-                Console.Write("Midlife ages");
+                Message = Message + "Midlife ages";
             }
+            return Message;
         }
-        public static void AgeStagesDeterminerMillenials(int age)
+        public static string AgeStagesDeterminerMillenials(int age)
         {
-            Console.WriteLine($"{age} year/s old, Millenials, ");
+            string Message = $"{age} year/s old, Millenials, ";
             if (age > 35)
             {
-                Console.Write("Midlife ages");
+                Message = Message + "Midlife ages";
             }
             else
             {
-                Console.Write("Early Adulthood ages");
+                Message = Message + "Early Adulthood ages";
             }
+            return Message;
         }
-        public static void AgeStagesDeterminerGenZ1(int age)
+        public static string AgeStagesDeterminerGenZ1(int age)
         {
-            Console.WriteLine($"{age} year/s old, Gen Z, ");
+            string Message = $"{age} year/s old, Gen Z, ";
             if (age > 21)
             {
-                Console.Write("Early Adulthood ages");
+                Message = Message + "Early Adulthood ages";
             }
             else
             {
-                Console.Write("Adolescence ages");
+                Message = Message + "Adolescence ages";
             }
+            return Message;
         }
-        public static void AgeStagesDeterminerGenZ2(int age)
+        public static string AgeStagesDeterminerGenZ2(int age)
         {
-            Console.WriteLine($"{age} year/s old, Gen Z, ");
+            
+            string Message = $"{age} year/s old, Gen Z, ";
             if (age > 9)
             {
-                Console.Write("Late Childhood ages");
+                Message = Message + "Late Childhood ages";
             }
             else if (age > 6)
             {
-                Console.Write("Middle Childhood ages");
+                Message = Message + "Middle Childhood ages";
             }
             else if (age > 3)
             {
-                Console.Write("Early Childhood ages");
+                Message = Message + "Early Childhood ages";
             }
             else if (age > 0)
             {
-                Console.Write("Infant ages");
+                Message = Message + "Infant ages";
             }
+
+            return Message;
         }
     }
 }
